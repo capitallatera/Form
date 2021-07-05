@@ -1,23 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import StepsComponent from './compoenet/StepsComponent'
+import { Layout,Menu,Breadcrumb} from 'antd'
+
 
 function App() {
+  const { Header,Content, Footer }=Layout
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+    <Layout>
+      <Header>
+        {/* <div/> */}
+        <Menu theme="dark" mode="horizontal" >
+        </Menu>
+      </Header>
+      <Content style={{ padding:'0 50px' }}>
+        <Breadcrumb>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>Registration</Breadcrumb.Item>
+
+        </Breadcrumb>
+        <div className='site-layout-content' >
+        <StepsComponent/>
+        </div>
+      </Content>
+      <Footer style={{ textAlign:'center' }}>
+        Form Design Using Ant.JS
+      </Footer>
+
+    </Layout>
+
+
+
+
     </div>
   );
 }
