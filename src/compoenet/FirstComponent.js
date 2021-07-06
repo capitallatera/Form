@@ -1,6 +1,4 @@
-// import React, {useState} from 'react'
 import  { Form, Input, Select,InputNumber } from 'antd' 
-
 
 function FirstComponent({onChange,fields,form}){
     const { Option }=Select
@@ -22,14 +20,13 @@ function FirstComponent({onChange,fields,form}){
             // eslint-disable-next-line
             email:'${label} is not a valid email',
             // eslint-disable-next-line
-            number:'${label} is not a valid number',    
+            number:'${label} is not a valid number',
+            // fName: '${label} is required'    
         },
         number:{
             // eslint-disable-next-line
             range:'${label} must be between ${min} and ${max}'
         }
-
-
     }
 
     return(
@@ -44,7 +41,6 @@ function FirstComponent({onChange,fields,form}){
         
         validateMessages={validateMessages}
         // eslint-disable-next-line
-            name="nest-messages"
             labelCol={{
                 span:8
             }}    
@@ -60,7 +56,6 @@ function FirstComponent({onChange,fields,form}){
         >
             <Form.Item
                 label="First Name"
-                // name={['user','fname']}
                 name='fName'
                 rules={[
                     {
@@ -73,12 +68,10 @@ function FirstComponent({onChange,fields,form}){
             
             <Form.Item
                 label="Middle Name"
-                // name={['user','mName']}
                 name='mName'
                 rules={[
                     {
                         required:true,
-                        // message:'Please input your Middle Name'
                     }
                 ]}
             >
@@ -86,7 +79,6 @@ function FirstComponent({onChange,fields,form}){
             </Form.Item>
             <Form.Item
                 label="Last Name"
-                // name={['user','lName']}
                 name='lName'
                 rules={[
                     {
@@ -119,7 +111,6 @@ function FirstComponent({onChange,fields,form}){
             </Form.Item>
                 {/* age */}
             <Form.Item 
-            // name={['user','age']}
             name='age'
             label="Age"
             style={{textAlign:'left'}}
@@ -137,7 +128,6 @@ function FirstComponent({onChange,fields,form}){
 
             {/* email */}
             <Form.Item 
-            // name={['user','email']}
             name='email'
             label="Email"
             rules={[
@@ -154,7 +144,6 @@ function FirstComponent({onChange,fields,form}){
 
 
             <Form.Item 
-            // name={['user','password']}
             name='password'
             label="Password"
             rules={[

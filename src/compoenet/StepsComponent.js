@@ -137,7 +137,6 @@ function StepsComponent() {
     },
   ])
 
-
   const [form]=Form.useForm()
 
   const steps = [
@@ -199,22 +198,20 @@ function StepsComponent() {
 
   const handlePrev=()=>{
 
-    
-    
     if (current===2){
-      console.log(window.localStorage.getItem("education"))
+      // console.log(window.localStorage.getItem("education"))
       form.setFieldsValue({
         
       })
     }
     if (current===1){
-      console.log(window.localStorage.getItem("general"))
+      // console.log(window.localStorage.getItem("general"))
       form.setFieldsValue({
         // fName:"Just Checking"
       })
     }
     
-    console.log("previous",current)
+    // console.log("previous",current)
 
     prev()
   }
@@ -234,6 +231,16 @@ var arrayOfObject=firstArray.map((value,index)=>{
 })
 
 // console.log(arrayOfObject)
+// console.log(arrayOfObject.length)
+// console.log(arrayOfObject[1][1]==="")
+
+//   const fieldStatus=()=>{
+//     for(let i=0;i>arrayOfObject.length;i++){
+//      return arrayOfObject[i][1]
+//   }
+// }
+// console.log(fieldStatus())
+  for(let i=0;i<5;i++){console.log(arrayOfObject[i][1]==="")}
 
   return (
     <div className="App">
