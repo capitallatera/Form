@@ -1,11 +1,11 @@
 // import React, {useState} from 'react'
 import { Form, Input, DatePicker,Divider } from 'antd'
-import Cities from './subcomponent/Cities'
+// import Cities from './subcomponent/Cities'
 import { Select } from 'antd'
 
 
 
-function SecondComponent({onChange,fields}) {
+function SecondComponent({onChange,fields,form}) {
     const { Option } = Select
 
     const { RangePicker }=DatePicker
@@ -42,6 +42,8 @@ function SecondComponent({onChange,fields}) {
         <Form 
         validateMessages={validateMessages}
             name="userForm"
+            remember="true"
+            form={form}
             fields={fields}
             onFieldsChange={(_,allFields)=>{
                 onChange(allFields)
@@ -84,7 +86,6 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                {/* <Cities onGenderChange={onGenderChange} /> */}
 
                 <Select
                     placeholder="City"

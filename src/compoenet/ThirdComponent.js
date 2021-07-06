@@ -1,13 +1,9 @@
 import { Form, Input,Tooltip,Select } from 'antd'
 // import prefixSelector from './subcomponent/prefixSelector'
-import Cities from './subcomponent/Cities'
-import State from './subcomponent/State'
+// import Cities from './subcomponent/Cities'
+// import State from './subcomponent/State'
 
-
-
-
-
-function ThirdComponent({onChange,fields}) {
+function ThirdComponent({onChange,fields,form}) {
 
     const { Option } = Select
     const formItemLayout = {
@@ -28,7 +24,8 @@ function ThirdComponent({onChange,fields}) {
     return (
         <Form
         name="userForm" 
-        
+        remember="true"
+        form={form}
         fields={fields}
         onFieldsChange={(_,allFields)=>{
             onChange(allFields)

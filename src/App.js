@@ -13,6 +13,7 @@ function App() {
       <Header>
         {/* <div/> */}
         <Menu theme="dark" mode="horizontal" >
+          Form
         </Menu>
       </Header>
       <Content style={{ padding:'0 50px' }}>

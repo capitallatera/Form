@@ -2,7 +2,7 @@
 import  { Form, Input, Select,InputNumber } from 'antd' 
 
 
-function FirstComponent({onChange,fields}){
+function FirstComponent({onChange,fields,form}){
     const { Option }=Select
     
     const onFinish=(values)=>{
@@ -35,7 +35,8 @@ function FirstComponent({onChange,fields}){
     return(
         <Form 
         name="userForm"
-        
+        remember="true"
+        form={form}
         fields={fields}
         onFieldsChange={(_,allFields)=>{
             onChange(allFields)
