@@ -1,11 +1,13 @@
 // import React, {useState} from 'react'
-import { Form, Input, Select, DatePicker,Divider } from 'antd'
+import { Form, Input, DatePicker,Divider } from 'antd'
 import Cities from './subcomponent/Cities'
+import { Select } from 'antd'
 
 
 
 function SecondComponent({onChange,fields}) {
     const { Option } = Select
+
     const { RangePicker }=DatePicker
 
     const onFinish = (values) => {
@@ -20,12 +22,16 @@ function SecondComponent({onChange,fields}) {
     }
 
     const validateMessages = {
+        // eslint-disable-next-line
         required: '${label} is required',
         types: {
+            // eslint-disable-next-line
             email: '${label} is not a valid email',
+            // eslint-disable-next-line
             number: '${label} is not a valid number',
         },
         number: {
+            // eslint-disable-next-line
             range: '${label} must be between ${min} and ${max}'
         }
 
@@ -55,7 +61,6 @@ function SecondComponent({onChange,fields}) {
 
         >
             <Form.Item
-            
             label="Matircs"
             // name={['user', 'matricName']}
             name='matricName'
@@ -65,7 +70,7 @@ function SecondComponent({onChange,fields}) {
                 }
             ]}
             >
-                <Input placeholder="Name of School"/>
+            <Input placeholder="Name of School"/>
             </Form.Item>
 
             <Form.Item
@@ -79,9 +84,23 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                <Cities onGenderChange={onGenderChange} />
+                {/* <Cities onGenderChange={onGenderChange} /> */}
+
+                <Select
+                    placeholder="City"
+                    onChange={onGenderChange}
+                    alllowClear
+                >
+                    <Option value="Jalandar">Jalandar</Option>
+                    <Option value="Amritsar">Amritsar</Option>
+                    <Option value="Bathinda">Bathinda</Option>
+
+                </Select>
 
             </Form.Item>
+
+
+
             <Form.Item
              style={{textAlign:'left'}}
              name="rangePickerMetrics" 
@@ -113,7 +132,16 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                <Cities onGenderChange={onGenderChange} />
+                <Select
+                    placeholder="City"
+                    onChange={onGenderChange}
+                    alllowClear
+                >
+                    <Option value="Jalandar">Jalandar</Option>
+                    <Option value="Amritsar">Amritsar</Option>
+                    <Option value="Bathinda">Bathinda</Option>
+
+                </Select>
 
             </Form.Item>
             <Form.Item style={{textAlign:'left'}} name="rangePickerIntermediate" label="Year">
@@ -146,8 +174,17 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                <Cities onGenderChange={onGenderChange} />
+                {/* <Cities onGenderChange={onGenderChange} /> */}
+                <Select
+                    placeholder="City"
+                    onChange={onGenderChange}
+                    alllowClear
+                >
+                    <Option value="Jalandar">Jalandar</Option>
+                    <Option value="Amritsar">Amritsar</Option>
+                    <Option value="Bathinda">Bathinda</Option>
 
+                </Select>
             </Form.Item>
             <Form.Item style={{textAlign:'left'}} name="rangePickerDiploma" label="Year">
                 <RangePicker/>
@@ -180,8 +217,17 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                <Cities onGenderChange={onGenderChange} />
+                {/* <Cities onGenderChange={onGenderChange} /> */}
+                <Select
+                    placeholder="City"
+                    onChange={onGenderChange}
+                    alllowClear
+                >
+                    <Option value="Jalandar">Jalandar</Option>
+                    <Option value="Amritsar">Amritsar</Option>
+                    <Option value="Bathinda">Bathinda</Option>
 
+                </Select>
             </Form.Item>
             <Form.Item  style={{textAlign:'left'}} name="rangePickerDegree" label="Year">
                 <RangePicker/>
@@ -214,8 +260,17 @@ function SecondComponent({onChange,fields}) {
                     }
                 ]}
             >
-                <Cities onGenderChange={onGenderChange} />
+                {/* <Cities onGenderChange={onGenderChange} /> */}
+                <Select
+                    placeholder="City"
+                    onChange={onGenderChange}
+                    alllowClear
+                >
+                    <Option value="Jalandar">Jalandar</Option>
+                    <Option value="Amritsar">Amritsar</Option>
+                    <Option value="Bathinda">Bathinda</Option>
 
+                </Select>
             </Form.Item>
             <Form.Item  style={{textAlign:'left'}} name="rangePickerphd" label="Year">
                 <RangePicker/>

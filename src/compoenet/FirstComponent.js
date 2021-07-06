@@ -16,12 +16,16 @@ function FirstComponent({onChange,fields}){
     }
 
     const validateMessages={
+        // eslint-disable-next-line
         required:'${label} is required',
         types:{
+            // eslint-disable-next-line
             email:'${label} is not a valid email',
+            // eslint-disable-next-line
             number:'${label} is not a valid number',    
         },
         number:{
+            // eslint-disable-next-line
             range:'${label} must be between ${min} and ${max}'
         }
 
@@ -38,6 +42,7 @@ function FirstComponent({onChange,fields}){
         }}
         
         validateMessages={validateMessages}
+        // eslint-disable-next-line
             name="nest-messages"
             labelCol={{
                 span:8

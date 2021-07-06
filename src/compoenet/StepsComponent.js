@@ -135,12 +135,17 @@ function StepsComponent() {
   value:''
 },
   ])
+
+// const [fields,setFields]=useState()
+console.log("getting data ",window.localStorage.getItem('data'))
+
 //displaying data in console
+// eslint-disable-next-line
   {fields.map((output)=>{
     console.log(output.name+":"+output.value)
-
+    
   })}
-
+  window.localStorage.setItem("data", JSON.stringify(fields))
 
   const steps=[
     {

@@ -1,7 +1,8 @@
-import { Form, Input, Select,Tooltip } from 'antd'
-import prefixSelector from './subcomponent/prefixSelector'
+import { Form, Input,Tooltip,Select } from 'antd'
+// import prefixSelector from './subcomponent/prefixSelector'
 import Cities from './subcomponent/Cities'
 import State from './subcomponent/State'
+
 
 
 
@@ -19,6 +20,10 @@ function ThirdComponent({onChange,fields}) {
             sm: { span: 8 },
         },
     };
+
+    const onGenderChange = (value) => {
+        console.log(value)
+    }
 
     return (
         <Form
@@ -56,15 +61,16 @@ function ThirdComponent({onChange,fields}) {
             </Form.Item>
             <Form.Item 
             style={{textAlign:'left'}}
-            name='address'
+            // name='address'
             label='Address'>
                 <Input.Group compact>
-
-                <Form.Item name='houseNo'>
                     <Tooltip title="H. No.">
+                <Form.Item name='houseNo'>
+                    
                     <Input style={{width:'70px'}} />
-                    </Tooltip>
+                    
                     </Form.Item>
+                    </Tooltip>
 
                     <Form.Item name='street'>
                         <Input placeholder="Street" />
@@ -77,7 +83,17 @@ function ThirdComponent({onChange,fields}) {
                         rules={[{ required: true, message: 'Province is required' }]}
                     >
                         {/* city */}
-                        <Cities />
+                        {/* <Cities /> */}
+                        <Select
+                            placeholder="City"
+                            onChange={onGenderChange}
+                            alllowClear
+                        >
+                            <Option value="Jalandar">Jalandar</Option>
+                            <Option value="Amritsar">Amritsar</Option>
+                            <Option value="Bathinda">Bathinda</Option>
+
+                        </Select>
                     </Form.Item>
 
                     <Form.Item
@@ -87,7 +103,18 @@ function ThirdComponent({onChange,fields}) {
                         rules={[{ required: true, message: 'Province is required' }]}
                     >
                         {/* state */}
-                        <State />
+                        {/* <State /> */}
+
+                        <Select
+                            placeholder="State"
+                            onChange={onGenderChange}
+                            alllowClear
+                        >
+                            <Option value="punjab">Punjab</Option>
+                            <Option value="Bangalore">Bangalore</Option>
+                            <Option value="pune">Pune</Option>
+
+                        </Select>
                     </Form.Item>
                 </Input.Group>
             </Form.Item>

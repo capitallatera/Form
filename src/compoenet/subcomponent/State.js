@@ -8,8 +8,8 @@ const States = ({onGenderChange}) => {
     return (
     <Select
         placeholder="State"
-        // onChange={onGenderChange}
-        // alllowClear
+        onChange={onGenderChange}
+        alllowClear
     >
         <Option value="punjab">Punjab</Option>
         <Option value="Bangalore">Bangalore</Option>
